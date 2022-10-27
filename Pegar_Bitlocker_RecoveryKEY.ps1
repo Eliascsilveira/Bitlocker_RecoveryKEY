@@ -8,5 +8,7 @@ $LocalAdmin.AdmPwd = $(Get-ADComputer $objComputer -Properties ms-MCS-AdmPwd | S
 
 $comp =  Get-ADComputer $objComputer  -Property * | Format-Table ms-Mcs-AdmPwd, OperatingSystem, OperatingSystemVersion, DNSHostName, IPv4Address, primaryTelexNumber,  Description -Wrap -AutoSize
 
+$comp | ft -AutoSize
+
 $Bitlocker_Object | Out-File -FilePath \\brariofs01\transfer\elias\BitLock.txt
 $comp | Out-File -FilePath \\brariofs01\transfer\elias\senha.txt
