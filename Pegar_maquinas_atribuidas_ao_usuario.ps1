@@ -1,0 +1,1 @@
+Get-ADComputer  -Server DRIO01B1.linde.lds.grp -filter {physicalDeliveryOfficeName -Like '*e1zq74*'} -property * | select name, operatingsystem, OperatingSystemVersion, physicalDeliveryOfficeName,  ms-Mcs-AdmPwd, DNSHostName, IPv4Address , primaryTelexNumber,  Description
