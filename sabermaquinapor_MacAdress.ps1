@@ -1,0 +1,1 @@
+Get-ADComputer -Server DRIO01B1.linde.lds.grp -filter {primaryTelexNumber -Like 'D0:94:66:B7:E6:01'} -property * | select name, operatingsystem, OperatingSystemVersion, physicalDeliveryOfficeName,  ms-Mcs-AdmPwd, DNSHostName, IPv4Address , primaryTelexNumber,  Description
