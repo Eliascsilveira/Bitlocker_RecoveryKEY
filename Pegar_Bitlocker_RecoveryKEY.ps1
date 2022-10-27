@@ -4,11 +4,9 @@ $Bitlocker_Object
 
 $LocalAdmin = $objComputer
 
-$LocalAdmin.AdmPwd = $(Get-ADComputer $objComputer -Properties ms-MCS-AdmPwd | select -ExpandProperty ms-MCS-AdmPwd)
+$LocalAdmin.AdmPwd = $(Get-ADComputer $objComputer -Properties ms-MCS-AdmPwd | Select-Object -ExpandProperty ms-MCS-AdmPwd)
 
-$comp =  Get-ADComputer $objComputer  -Property * | Format-Table ms-Mcs-AdmPwd,OperatingSystem,OperatingSystemVersion,DNSHostName,IPv4Address , primaryTelexNumber,  Description -Wrap –Auto  
-
-$comp | ft -AutoSize
+$comp =  Get-ADComputer $objComputer  -Property * | Format-Table ms-Mcs-AdmPwd, OperatingSystem, OperatingSystemVersion, DNSHostName, IPv4Address, primaryTelexNumber,  Description -Wrap -AutoSize
 
 $Bitlocker_Object | Out-File -FilePath \\brariofs01\transfer\elias\BitLock.txt
 $comp | Out-File -FilePath \\brariofs01\transfer\elias\senha.txt
